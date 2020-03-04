@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>WOW</title>
+    <link rel="stylesheet" href="animate.css">
+    <style>
+        .box{
+            width: 250px;
+            height: 100px;
+            background: red;
+            text-align: center;
+            margin: 10px auto;
+        }
+        .box1{
+            width: 250px;
+            height: 100px;
+            background: green;
+            text-align: center;
+             margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box section--purple wow slideInRight">
+    coder rubel
+</div>
+<div class="box1 section--purple wow slideInLeft">
+    coder rubel
+</div>
+
+<script src="wow.js"></script>
+<script>
+    wow = new WOW(
+        {
+            animateClass: 'animated',
+            offset:       100,
+            callback:     function(box) {
+                console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+            }
+        }
+    );
+    wow.init();
+    document.getElementById('moar').onclick = function() {
+        var section = document.createElement('section');
+        section.className = 'section--purple wow fadeInDown';
+        this.parentNode.insertBefore(section, this);
+    };
+</script>
+</body>
+</html>
